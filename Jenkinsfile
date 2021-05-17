@@ -25,14 +25,14 @@ pipeline {
     post{
         failure{
         	echo 'Failed Test'
-        	emailtext attachLog: true,
+        	emailext attachLog: true,
         		body: "${currentBuild.currentResult}: Job ${env.JOB_NAME} build ${env.BUILD_NUMBER}",
 					to: 'rafal.widziszewski@gmail.com',
         				subject: 'Jenkins Test Failure'
         } 	
         success{
         	echo 'Sucessful Test'
-        	emailtext attachLog: true,
+        	emailext attachLog: true,
        	body: "${currentBuild.currentResult}: Job ${env.JOB_NAME} build ${env.BUILD_NUMBER}",
 					to: 'rafal.widziszewski@gmail.com',
         				subject: 'Jenkins Test Sucess'	
