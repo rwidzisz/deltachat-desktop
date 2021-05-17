@@ -65,8 +65,8 @@ pipeline{
         		subject: "Test success"
 		}
 	}
+  }
 }
-
 
 
 
