@@ -48,7 +48,7 @@ pipeline{
               sh 'npm run test'
           }
       }
-  }
+  
 	post{
 		failure{
 			echo 'Test Failed'
