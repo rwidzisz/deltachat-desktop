@@ -32,6 +32,14 @@ pipeline{
       
   	}
   }
+stage('Deploy'){
+  	steps{
+  		echo 'Deploying..'
+  		sh 'docker build -t deploy -f kouminkator-deploy .'
+  }
+  
+  
+ }
  }
 	post{
 		failure{
