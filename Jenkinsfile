@@ -5,9 +5,9 @@ pipeline{
 		  steps{
 			  echo 'Building'
 			  sh 'git pull origin master'
-			  //sh 'npm install'
-			  //sh 'npm --version'
-			  //sh 'npm run build'
+			  sh 'npm install'
+			  sh 'npm --version'
+			  sh 'npm run build'
 			  script {
 			  	last_stage = env.STAGE_NAME
 			  }			  
@@ -22,7 +22,7 @@ pipeline{
         		if("${currentBuild.currentResult}"=='SUCCESS')
         		{
         			echo 'Testing'
-              			//sh 'npm run test'
+              			sh 'npm run test'
               		}
               		else
               		{
@@ -35,7 +35,7 @@ pipeline{
 stage('Deploy'){
   	steps{
   		echo 'Deploying..'
-  		//sh 'docker build -t deploy -f kouminkator-deploy .'
+  		sh 'docker build -t deploy -f kouminkator-deploy .'
   }
   
   
